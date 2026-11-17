@@ -207,8 +207,8 @@ function BlueloopHome() {
             <div className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-primary"><Leaf className="size-3.5" /> Keep the loop going</div>
           </div>
           <div className="flex items-center gap-3 border-t border-sidebar-border px-5 py-4">
-            <div className="flex size-9 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">IV</div>
-            <div className="min-w-0 flex-1"><p className="text-sm font-semibold">Inovexa team</p><p className="text-xs text-muted-foreground">Community account</p></div>
+            <div className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary"><Leaf className="size-4" /></div>
+            <div className="min-w-0 flex-1"><p className="text-sm font-semibold">Community account</p><p className="text-xs text-muted-foreground">Mangaluru hub</p></div>
             <ChevronDown className="size-4 text-muted-foreground" />
           </div>
         </aside>
@@ -224,7 +224,7 @@ function BlueloopHome() {
             <div className="flex items-center gap-3">
               <span className="hidden items-center gap-1.5 rounded-full border border-primary/20 bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-primary sm:flex"><span className="size-1.5 rounded-full bg-primary" /> Demo workspace</span>
               <button aria-label="Notifications" title="Notifications" className="relative flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted"><Bell className="size-[18px]" /><span className="absolute right-[7px] top-[7px] size-1.5 rounded-full bg-amber" /></button>
-              <div className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">IV</div>
+              <div className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary"><Leaf className="size-4" /></div>
             </div>
           </header>
           {mobileMenuOpen && <nav className="absolute z-40 w-full space-y-1 border-b border-border bg-background p-3 shadow-md lg:hidden" aria-label="Mobile navigation">{tabs.map((tab) => <button key={tab.label} onClick={() => navigate(tab.label)} className={`flex h-11 w-full items-center gap-3 rounded-md px-3 text-sm font-medium ${activeTab === tab.label ? "bg-secondary text-primary" : "text-muted-foreground hover:bg-muted"}`}><tab.icon className="size-4" />{tab.label}</button>)}</nav>}
