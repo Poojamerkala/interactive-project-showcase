@@ -11,9 +11,7 @@ import {
   ChevronDown,
   ChevronRight,
   CircleDot,
-  Clock3,
   Compass,
-  Download,
   Factory,
   FilePlus2,
   Filter,
@@ -233,7 +231,7 @@ function BlueloopHome() {
 
           <main className="mx-auto max-w-[1220px] px-4 pb-14 pt-7 sm:px-8 sm:pt-9">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-              <div><p className="mb-1 text-xs font-semibold uppercase tracking-[0.13em] text-primary">Monday, 16 November</p><h1 className="font-display text-3xl font-semibold tracking-tight sm:text-[34px]">Good morning, Vinay <span aria-hidden="true">✳</span></h1><p className="mt-1.5 text-sm text-muted-foreground">A little less waste. A lot more possibility.</p></div>
+              <div><p className="mb-1 text-xs font-semibold uppercase tracking-[0.13em] text-primary">Mangaluru community</p><h1 className="font-display text-3xl font-semibold tracking-tight sm:text-[34px]">A better loop for every resource</h1><p className="mt-1.5 text-sm text-muted-foreground">A little less waste. A lot more possibility.</p></div>
               <Button onClick={openNewRequest} className="h-10 gap-2"><FilePlus2 className="size-4" /> New waste request</Button>
             </div>
 
