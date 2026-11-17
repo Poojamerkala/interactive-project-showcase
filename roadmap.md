@@ -1,2 +1,2 @@
-- [ ] Build the interactive Blueloop demo from the project presentation.
-- [ ] Remove personal names and the greeting from the demo.
+- [x] Build the interactive Blueloop demo from the project presentation.
+- [x] Remove personal names and the greeting from the demo.
