@@ -30,3 +30,5 @@ use the editor.
 <!-- LOVABLE:END -->
 
 The Blueloop prototype keeps sample identification, partner matches, and impact data in frontend demo state; do not present them as live services.
+
+Seller/receiver registration, marketplace offers, buyer interests, and connection actions stay in frontend demo state; clearly label them as illustrative and do not imply persistence or real contact delivery.

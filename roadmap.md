@@ -1,2 +1,5 @@
 - [x] Build the interactive Blueloop demo from the project presentation.
 - [x] Remove personal names and the greeting from the demo.
+- [ ] Add seller and receiver demo registration and role-specific dashboards.
+- [ ] Add material listings, receiver category requests, and matching connection actions.
+- [ ] Verify the demo flow and category matching behavior.
