@@ -11,9 +11,7 @@ import {
   ChevronDown,
   ChevronRight,
   CircleDot,
-  Clock3,
   Compass,
-  Download,
   Factory,
   FilePlus2,
   Filter,
@@ -209,8 +207,8 @@ function BlueloopHome() {
             <div className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-primary"><Leaf className="size-3.5" /> Keep the loop going</div>
           </div>
           <div className="flex items-center gap-3 border-t border-sidebar-border px-5 py-4">
-            <div className="flex size-9 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">IV</div>
-            <div className="min-w-0 flex-1"><p className="text-sm font-semibold">Inovexa team</p><p className="text-xs text-muted-foreground">Community account</p></div>
+            <div className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary"><Leaf className="size-4" /></div>
+            <div className="min-w-0 flex-1"><p className="text-sm font-semibold">Community account</p><p className="text-xs text-muted-foreground">Mangaluru hub</p></div>
             <ChevronDown className="size-4 text-muted-foreground" />
           </div>
         </aside>
@@ -226,14 +224,14 @@ function BlueloopHome() {
             <div className="flex items-center gap-3">
               <span className="hidden items-center gap-1.5 rounded-full border border-primary/20 bg-secondary/60 px-2.5 py-1 text-[11px] font-medium text-primary sm:flex"><span className="size-1.5 rounded-full bg-primary" /> Demo workspace</span>
               <button aria-label="Notifications" title="Notifications" className="relative flex size-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted"><Bell className="size-[18px]" /><span className="absolute right-[7px] top-[7px] size-1.5 rounded-full bg-amber" /></button>
-              <div className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">IV</div>
+              <div className="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary"><Leaf className="size-4" /></div>
             </div>
           </header>
           {mobileMenuOpen && <nav className="absolute z-40 w-full space-y-1 border-b border-border bg-background p-3 shadow-md lg:hidden" aria-label="Mobile navigation">{tabs.map((tab) => <button key={tab.label} onClick={() => navigate(tab.label)} className={`flex h-11 w-full items-center gap-3 rounded-md px-3 text-sm font-medium ${activeTab === tab.label ? "bg-secondary text-primary" : "text-muted-foreground hover:bg-muted"}`}><tab.icon className="size-4" />{tab.label}</button>)}</nav>}
 
           <main className="mx-auto max-w-[1220px] px-4 pb-14 pt-7 sm:px-8 sm:pt-9">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-              <div><p className="mb-1 text-xs font-semibold uppercase tracking-[0.13em] text-primary">Monday, 16 November</p><h1 className="font-display text-3xl font-semibold tracking-tight sm:text-[34px]">Good morning, Vinay <span aria-hidden="true">✳</span></h1><p className="mt-1.5 text-sm text-muted-foreground">A little less waste. A lot more possibility.</p></div>
+              <div><p className="mb-1 text-xs font-semibold uppercase tracking-[0.13em] text-primary">Mangaluru community</p><h1 className="font-display text-3xl font-semibold tracking-tight sm:text-[34px]">A better loop for every resource</h1><p className="mt-1.5 text-sm text-muted-foreground">A little less waste. A lot more possibility.</p></div>
               <Button onClick={openNewRequest} className="h-10 gap-2"><FilePlus2 className="size-4" /> New waste request</Button>
             </div>
 
@@ -360,7 +358,7 @@ function NewRequestDialog({ category, setCategory, quantity, setQuantity, condit
         <div className="grid gap-3 sm:grid-cols-2"><div><label htmlFor="waste-quantity" className="mb-1.5 block text-xs font-medium">Approximate quantity</label><div className="flex gap-2"><Input id="waste-quantity" aria-label="Approximate quantity in kilograms" type="number" min="1" value={quantity} onChange={(event) => setQuantity(event.target.value)} className="h-9" required /><span className="flex h-9 items-center rounded-md border border-input bg-muted px-3 text-xs text-muted-foreground">kg</span></div></div><div><label htmlFor="waste-location" className="mb-1.5 block text-xs font-medium">Pickup area</label><Input id="waste-location" value={location} onChange={(event) => setLocation(event.target.value)} placeholder="e.g. Kadri, Mangaluru" className="h-9" /></div></div>
         <div className="flex justify-end gap-2 border-t border-border pt-3"><Button type="button" variant="outline" onClick={onClose}>Cancel</Button><Button type="submit" className="gap-2">Review matches <ArrowRight className="size-4" /></Button></div>
       </form> : <form onSubmit={onSubmit} className="px-5 py-4 sm:px-6">
-        <div className="mb-4 flex items-start gap-3 rounded-md border border-primary/15 bg-secondary/45 p-3.5"><div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-background text-primary"><Sparkles className="size-4" /></div><div><p className="text-xs font-semibold">Suggested next use</p><p className="mt-1 text-xs leading-relaxed text-muted-foreground">{recommendations[category] ?? recommendations.Plastic}</p></div></div>
+        <div className="mb-4 flex items-start gap-3 rounded-md border border-primary/15 bg-secondary/45 p-3.5"><div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-background text-primary"><Sparkles className="size-4" /></div><div><p className="text-xs font-semibold">Suggested next use</p><p className="mt-1 text-xs leading-relaxed text-muted-foreground">{recommendations[category] ?? recommendations["Plastic"]}</p></div></div>
         <div className="mb-4 rounded-md border border-border bg-card p-4"><p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Best nearby sample match</p><div className="mt-3 flex items-center gap-3"><div className="flex size-9 items-center justify-center rounded-full bg-secondary text-[10px] font-bold text-primary">{partners.find((item) => item.kind.toLowerCase().includes(category.toLowerCase()))?.initials ?? "CR"}</div><div className="min-w-0 flex-1"><p className="truncate text-xs font-semibold">{partners.find((item) => item.kind.toLowerCase().includes(category.toLowerCase()))?.name ?? "Coastline Recyclers"}</p><p className="mt-0.5 text-[10px] text-muted-foreground">Sample match · 2.4 km away</p></div><span className="rounded-sm bg-secondary px-2 py-1 text-[10px] font-semibold text-primary">Strong match</span></div></div>
         <dl className="mb-4 grid grid-cols-2 gap-3 text-xs"><div className="rounded-sm bg-muted/70 p-3"><dt className="text-[10px] text-muted-foreground">Material</dt><dd className="mt-1 font-medium">{category} · {condition}</dd></div><div className="rounded-sm bg-muted/70 p-3"><dt className="text-[10px] text-muted-foreground">Amount & location</dt><dd className="mt-1 font-medium">{quantity || 0} kg · {location || "Mangaluru"}</dd></div></dl>
         <p className="mb-4 text-[10px] leading-relaxed text-muted-foreground">This interactive demo simulates identification and partner matches. It does not send your photo or arrange a real pickup.</p>
